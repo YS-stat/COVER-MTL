@@ -1,0 +1,99 @@
+{
+  "complete": true,
+  "checks": [
+    {
+      "name": "heterogeneity regimes: 5 settings x 7 methods x 100 repetitions",
+      "passed": true,
+      "observed": {
+        "rows": 35,
+        "counts": [
+          100
+        ]
+      }
+    },
+    {
+      "name": "mechanism: 10 settings x 3 methods x 100 repetitions",
+      "passed": true,
+      "observed": {
+        "rows": 30,
+        "counts": [
+          100
+        ]
+      }
+    },
+    {
+      "name": "task scaling: 3 settings x 7 methods x 100 repetitions",
+      "passed": true,
+      "observed": {
+        "rows": 21,
+        "settings": [
+          24,
+          96,
+          192
+        ]
+      }
+    },
+    {
+      "name": "dimension scaling: 3 settings x 7 methods x 100 repetitions",
+      "passed": true,
+      "observed": {
+        "rows": 21,
+        "settings": [
+          50,
+          100,
+          200
+        ]
+      }
+    },
+    {
+      "name": "random alignment: 7 methods x 100 repetitions",
+      "passed": true,
+      "observed": {
+        "rows": 7,
+        "counts": [
+          100
+        ]
+      }
+    },
+    {
+      "name": "sensitivity: 6 variants x 2 methods x 5 initializations",
+      "passed": true,
+      "observed": {
+        "groups": 12,
+        "counts": [
+          5
+        ]
+      }
+    },
+    {
+      "name": "outlier diagnostic: 5 overlap settings x 100 repetitions",
+      "passed": true,
+      "observed": {
+        "rows": 5,
+        "counts": [
+          100
+        ]
+      }
+    },
+    {
+      "name": "fixed-representation verification: 5 designs x 31 couplings",
+      "passed": true,
+      "observed": {
+        "rows": 5,
+        "couplings": [
+          31
+        ]
+      }
+    },
+    {
+      "name": "GTEx tissue table: 2 responses x 11 tissues x 7 methods x 20 repeats",
+      "passed": true,
+      "observed": {
+        "rows": 154,
+        "counts": [
+          20
+        ]
+      }
+    }
+  ]
+}

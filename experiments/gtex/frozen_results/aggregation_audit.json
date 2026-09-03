@@ -1,0 +1,23 @@
+{
+  "repeats": 20,
+  "folds_per_repeat": 5,
+  "responses": 2,
+  "outer_fold_jobs": 200,
+  "methods": [
+    "COVER",
+    "ARMUL",
+    "FLARCC",
+    "HPS",
+    "Pool",
+    "STL",
+    "MMoE"
+  ],
+  "neural_files": 200,
+  "classical_files": 200,
+  "overlap_files": 200,
+  "diagnostic_mean_baselines": [
+    "TissueMean",
+    "GlobalMean"
+  ],
+  "maximum_hps_reproduction_mse_delta": 8.881784197001252e-16
+}

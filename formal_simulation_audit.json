@@ -1,0 +1,553 @@
+{
+  "complete": true,
+  "blocks": [
+    {
+      "name": "primary",
+      "result_directory": "main_final",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "within_0p200/both_overlap_aligned",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "9babc8933aa0"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 203,
+          "complete": true
+        },
+        {
+          "setting": "within_0p300/both_overlap_aligned",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "2cf64a1dc0bf"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 220,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "factorial_controls",
+      "result_directory": "main_controls_final",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "within_0p200/homogeneous",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "4ba7bc9e60e4"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 224,
+          "complete": true
+        },
+        {
+          "setting": "within_0p200/covariate_only",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "324133475ca6"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 200,
+          "complete": true
+        },
+        {
+          "setting": "within_0p200/posterior_only",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "e335a6e734be"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 199,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "average_moment_ablation",
+      "result_directory": "average_moment_appendix",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "within_0p300/both_overlap_aligned",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "b7200b71af00"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "random_alignment",
+      "result_directory": "random_alignment_appendix",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "within_0p200/both_random",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "ed6edc653452"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 253,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "initialization_and_architecture",
+      "result_directory": "sensitivity_final",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "base",
+          "replicates": 5,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "528e040cd690"
+          ],
+          "unique_seeds": 1,
+          "expected_unique_seeds": 1,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "d12",
+          "replicates": 5,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "94b84a579c0e"
+          ],
+          "unique_seeds": 1,
+          "expected_unique_seeds": 1,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "d36",
+          "replicates": 5,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "b25c2a258332"
+          ],
+          "unique_seeds": 1,
+          "expected_unique_seeds": 1,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "narrow",
+          "replicates": 5,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "5578b86895e4"
+          ],
+          "unique_seeds": 1,
+          "expected_unique_seeds": 1,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "wide",
+          "replicates": 5,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "8a72401a5d2c"
+          ],
+          "unique_seeds": 1,
+          "expected_unique_seeds": 1,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "deep",
+          "replicates": 5,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "232affd04813"
+          ],
+          "unique_seeds": 1,
+          "expected_unique_seeds": 1,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "large_task_count",
+      "result_directory": "scaling_final_pilot",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "tasks_0024",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "482318d5717c"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 284,
+          "complete": true
+        },
+        {
+          "setting": "tasks_0096",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "f337f0ec1690"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 189,
+          "complete": true
+        },
+        {
+          "setting": "tasks_0192",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "f8d72059283d"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 152,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "high_input_dimension",
+      "result_directory": "highp_nuisance_within_0p30",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "dimension_0050",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "74bd5b623c3e"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 257,
+          "complete": true
+        },
+        {
+          "setting": "dimension_0100",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "c89cf14f38dc"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 203,
+          "complete": true
+        },
+        {
+          "setting": "dimension_0200",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "71772fac1a92"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 197,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "mechanism",
+      "result_directory": "mechanism_spectral_pilot",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "covariate/value_0p001",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "41b2b49ecc4c"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "covariate/value_0p03",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "a80cd60f6dee"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "covariate/value_0p1",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "85d4c0d65de8"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "covariate/value_0p3",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "80991bd64d19"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "covariate/value_1",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "c6e1510d22df"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "posterior/value_0",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "8d9421f3215d"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "posterior/value_0p25",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "e22fc9f43f83"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "posterior/value_0p5",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "29e9f06b3274"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "posterior/value_0p75",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "174d7e6f96a4"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "posterior/value_1",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "41b2b49ecc4c"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "name": "overlap_gated_outlier",
+      "result_directory": "outlier_decoupling_final",
+      "complete": true,
+      "settings": [
+        {
+          "setting": "overlap_0p001",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "121dd5f840a8"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "overlap_0p003",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "35096fac96af"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "overlap_0p01",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "38c503124bb0"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "overlap_0p03",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "71aeafb20eeb"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        },
+        {
+          "setting": "overlap_1",
+          "replicates": 100,
+          "missing_replicates": [],
+          "unexpected_replicates": [],
+          "config_hashes": [
+            "b36f930dab57"
+          ],
+          "unique_seeds": 100,
+          "expected_unique_seeds": 100,
+          "failures": [],
+          "nonconverged_classical_tuning_rows": 0,
+          "complete": true
+        }
+      ]
+    }
+  ],
+  "fixed_representation_theory": {
+    "complete": true,
+    "rows": 155,
+    "designs": 5,
+    "couplings_per_design": [
+      31
+    ],
+    "maximum_relative_error": 0.0043186779429132
+  }
+}

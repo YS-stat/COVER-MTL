@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & Excess MSE & Worst-task excess MSE & Task-specific component MSE \\
+\midrule
+Pool & 0.9359 (0.0256) & 2.8854 (0.5577) & 1.0006 (0.0045) \\
+STL & 0.1636 (0.0079) & 0.4031 (0.1017) & 0.1993 (0.0104) \\
+HPS & 0.1549 (0.0069) & 0.3467 (0.0634) & 0.1981 (0.0197) \\
+MMoE & 0.1797 (0.0087) & 0.4153 (0.0787) & 0.2225 (0.0146) \\
+ARMUL & 0.1513 (0.0066) & 0.3394 (0.0604) & 0.1997 (0.0217) \\
+FLARCC & 0.2012 (0.0156) & 0.4383 (0.0797) & 0.2666 (0.0293) \\
+COVER & 0.1508 (0.0064) & 0.3363 (0.0634) & 0.1936 (0.0195) \\
+\bottomrule
+\end{tabular}
+\caption{Performance under random alignment between covariate and posterior heterogeneity. Entries are means (standard deviations) over 100 repetitions.}
+\label{tab:random-alignment}
+\end{table}

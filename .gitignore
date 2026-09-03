@@ -1,0 +1,16 @@
+__pycache__/
+.DS_Store
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+build/
+dist/
+/results/
+/logs/
+*.log
+/experiments/gtex/raw/
+/experiments/gtex/prepared/
+/experiments/gtex/results/

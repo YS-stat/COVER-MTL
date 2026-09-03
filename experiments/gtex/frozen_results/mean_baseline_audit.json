@@ -1,0 +1,16 @@
+{
+  "TissueMean": {
+    "cover_task_wins": 22,
+    "response_tissue_combinations": 22,
+    "cover_repeat_wins": 20,
+    "repeats": 20,
+    "mean_relative_gain": 0.5785756996946909
+  },
+  "GlobalMean": {
+    "cover_task_wins": 22,
+    "response_tissue_combinations": 22,
+    "cover_repeat_wins": 20,
+    "repeats": 20,
+    "mean_relative_gain": 0.6739673447580208
+  }
+}

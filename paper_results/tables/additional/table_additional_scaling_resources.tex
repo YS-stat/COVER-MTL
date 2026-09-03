@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{\(T=192\)} & \multicolumn{3}{c}{\(p=200\)} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Method & Memory (MB) & Pred. params. & Selected \(\lambda\) & Memory (MB) & Pred. params. & Selected \(\lambda\) \\
+\midrule
+Pool & 91.7 & 833 & 0 & 79.9 & 6465 & 0 \\
+STL & 77.2 & 159936 & 0 & 84.9 & 310320 & 0 \\
+HPS & 82.0 & 7817 & 0 & 80.1 & 18441 & 0 \\
+MMoE & 117.4 & 56896 & 0 & 93.1 & 116592 & 0 \\
+ARMUL & 82.0 & 7817 & 0.1 & 80.1 & 18441 & 0.3 \\
+FLARCC & 82.0 & 7817 & 0.01 & 80.1 & 18441 & 0.3 \\
+COVER & 217.1 & 7817 & 3 & 88.0 & 18441 & 10 \\
+\bottomrule
+\end{tabular}
+\caption{Resource use at the largest task-count and input-dimension settings. Memory and predictive parameter counts are means; selected regularization parameters are medians over 100 repetitions.}
+\label{tab:scaling-resources}
+\end{table}

@@ -1,0 +1,30 @@
+{
+  "formal_input_directories": [
+    "results/main",
+    "results/controls",
+    "results/mechanism",
+    "results/scaling",
+    "results/random_alignment",
+    "results/sensitivity",
+    "results/outlier",
+    "results/theory_verification",
+    "experiments/gtex/results/repeated_cv_v1"
+  ],
+  "excluded": [
+    "exploratory and calibration simulations",
+    "PDX experiments",
+    "deprecated GTEx pilot, smoke, and E2E experiments"
+  ],
+  "primary_simulation_metric": "task-balanced excess MSE",
+  "simulation_repetitions": 100,
+  "gtex_protocol": "20 repeated five-fold cross-validation partitions",
+  "method_order": [
+    "Pool",
+    "STL",
+    "HPS",
+    "MMoE",
+    "ARMUL",
+    "FLARCC",
+    "COVER"
+  ]
+}
