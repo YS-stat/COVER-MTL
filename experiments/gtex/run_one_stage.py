@@ -66,7 +66,12 @@ def fit_shared_candidates(
     )
     seed_everything(initialization_seed)
     initial_hps = shared_model(config, len(fold.tissues), "none")
-    initial_state = initial_hps.state_dict()
+    # Keep an immutable CPU snapshot so every method starts from the same
+    # parameters regardless of whether the fold is trained on CPU or GPU.
+    initial_state = {
+        name: value.detach().cpu().clone()
+        for name, value in initial_hps.state_dict().items()
+    }
 
     hps, hps_seconds = fit_timed(
         initial_hps,
@@ -184,7 +189,9 @@ def main() -> None:
         tissue_to_index = {tissue: index for index, tissue in enumerate(fold.tissues)}
         missing_targets = sorted(set(TARGET_BRAIN_TISSUES) - set(tissue_to_index))
         if missing_targets:
-            raise ValueError(f"Target brain tissues are missing: {missing_targets}")
+            raise ValueError(
+                f"Target central-nervous-system tissues are missing: {missing_targets}"
+            )
         validation_task_indices = tuple(
             tissue_to_index[tissue] for tissue in TARGET_BRAIN_TISSUES
         )
@@ -274,7 +281,10 @@ def main() -> None:
         response=args.response, test_fold=args.test_fold, cv_repeat=repeat_index
     ).to_csv(output / "overlap.csv", index=False)
     metadata = {
-        "protocol": "fair one-stage training with validation-selected checkpoint",
+        "protocol": (
+            "fair one-stage training with validation-selected checkpoint; "
+            "immutable shared initialization and invariant overlap diagnostics"
+        ),
         "config": asdict(config),
         "response": args.response,
         "test_fold": args.test_fold,

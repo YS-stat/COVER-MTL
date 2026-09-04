@@ -262,6 +262,8 @@ def main() -> None:
     ]
     diagnostic_columns = [
         "normalized_overlap_trace",
+        "invariant_normalized_overlap",
+        "invariant_overlap_rank",
         "overlap_effective_rank",
         "supported_contrast_fraction",
         "overlap_weighted_head_energy",

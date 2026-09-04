@@ -8,7 +8,7 @@
     "results/sensitivity",
     "results/outlier",
     "results/theory_verification",
-    "experiments/gtex/results/repeated_cv_v1"
+    "experiments/gtex/frozen_results"
   ],
   "excluded": [
     "exploratory and calibration simulations",

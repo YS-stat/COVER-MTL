@@ -31,7 +31,7 @@ simulation and GTEx analyses are substantially faster on GPUs.
 - `src/cover_mtl/`: COVER-MTL, comparison methods, simulation data-generating
   processes, training utilities, launchers, and aggregation tools.
 - `tests/`: algebraic, implementation, randomness, and end-to-end checks.
-- `experiments/gtex/`: the final donor-disjoint GTEx brain-tissue analysis.
+- `experiments/gtex/`: the final donor-disjoint GTEx central-nervous-system analysis.
 - `paper_results/`: frozen manuscript-facing summaries, tables, figures, and
   the script used to rebuild them.
 - `SIMULATION_PROTOCOL.md`: complete settings and commands for the formal
@@ -64,7 +64,7 @@ settings, tuning rules, and reported metrics.
 ## GTEx analysis
 
 The real-data experiment predicts `JAM2` and `SH2D2A` expression across 11
-GTEx v8 brain tissues. Splits are donor-disjoint, and preprocessing and model
+GTEx v8 central-nervous-system tissues. Splits are donor-disjoint, and preprocessing and model
 selection use training and validation donors only. The analysis uses 20
 repeated five-fold cross-validation partitions and compares COVER-MTL with
 ARMUL, FLARCC, HPS, Pool, STL, and MMoE.
@@ -85,12 +85,12 @@ Run and aggregate the analysis with
 ```bash
 python experiments/gtex/launch_repeated_cv.py \
   --data experiments/gtex/prepared/gtex_v8_brain_module137.parquet \
-  --output-dir experiments/gtex/results/repeated_cv_v1 \
+  --output-dir experiments/gtex/results/repeated_cv_v2 \
   --repeats 20 --workers 12 --threads-per-job 2 \
   --devices cuda:0,cuda:1,cuda:2,cuda:3
 
 python experiments/gtex/aggregate_repeated_cv.py \
-  --input-dir experiments/gtex/results/repeated_cv_v1 \
+  --input-dir experiments/gtex/results/repeated_cv_v2 \
   --repeats 20
 ```
 

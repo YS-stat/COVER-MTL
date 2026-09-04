@@ -1,4 +1,4 @@
-"""Prepare the public GTEx v8 brain-tissue expression data for analysis."""
+"""Prepare the public GTEx v8 central-nervous-system data for analysis."""
 
 from __future__ import annotations
 
@@ -73,7 +73,9 @@ def main() -> None:
     requested = set(module_genes) | set(TARGET_GENES)
     tissue_files = sorted(args.raw_dir.glob("gene_tpm_2017-06-05_v8_brain_*.gct.gz"))
     if len(tissue_files) != 11:
-        raise ValueError(f"Expected 11 brain-tissue files, found {len(tissue_files)}.")
+        raise ValueError(
+            f"Expected 11 central-nervous-system tissue files, found {len(tissue_files)}."
+        )
 
     frames: list[pd.DataFrame] = []
     tissue_summary: list[dict[str, object]] = []

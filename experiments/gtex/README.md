@@ -1,4 +1,4 @@
-# GTEx brain-tissue experiment for COVER-MTL
+# GTEx central-nervous-system experiment for COVER-MTL
 
 This directory contains the frozen GTEx v8 experiment used to evaluate COVER-MTL.
 Only the final seven-method, donor-disjoint repeated cross-validation protocol is
@@ -6,9 +6,9 @@ retained.
 
 ## Scientific setting
 
-- Tasks: 11 brain tissues.
-- Responses: `JAM2` and `SH2D2A`, fixed before model evaluation.
-- Candidate predictors: genes in MODULE 137, excluding the response gene.
+- Tasks: 11 central-nervous-system tissues, including cervical spinal cord.
+- Responses: `JAM2` and `SH2D2A`.
+- Candidate predictors: genes in MODULE 137, excluding both response genes.
 - Outcome scale: `log2(TPM + 1)`.
 - Splitting unit: donor. All samples from the same donor remain in the same fold.
 - Evaluation: task-balanced standardized and raw prediction mean squared error.
@@ -30,7 +30,7 @@ inside the fold-level neural output but are not included in the seven-method ran
 
 - `data_manifest.txt`: public source URLs for the 11 tissue files and MODULE 137 list.
 - `download_data.py`: downloads the files listed in the public data manifest.
-- `prepare_data.py`: constructs the analysis-ready brain-tissue data.
+- `prepare_data.py`: constructs the analysis-ready central-nervous-system data.
 - `data.py`: donor splitting and train-only preprocessing.
 - `experiment.py`: frozen configuration and shared model utilities.
 - `run_one_stage.py`: neural methods and COVER tuning for one response-fold job.
@@ -39,7 +39,7 @@ inside the fold-level neural output but are not included in the seven-method ran
 - `aggregate_repeated_cv.py`: verifies and aggregates the completed experiment.
 - `finalize_repeated_cv.py`: waits for all jobs before aggregation.
 - `prepared/gtex_v8_brain_module137.parquet`: generated analysis-ready data.
-- `results/repeated_cv_v1/`: generated fold-level and aggregated results.
+- `results/repeated_cv_v2/`: generated fold-level and aggregated results.
 - `frozen_results/`: the machine-readable aggregates used in the manuscript.
 
 ## Reproduction
@@ -55,12 +55,12 @@ python experiments/gtex/prepare_data.py \
 
 python experiments/gtex/launch_repeated_cv.py \
   --data experiments/gtex/prepared/gtex_v8_brain_module137.parquet \
-  --output-dir experiments/gtex/results/repeated_cv_v1 \
+  --output-dir experiments/gtex/results/repeated_cv_v2 \
   --repeats 20 --workers 12 --threads-per-job 2 \
   --devices cuda:0,cuda:1,cuda:2,cuda:3
 
 python experiments/gtex/aggregate_repeated_cv.py \
-  --input-dir experiments/gtex/results/repeated_cv_v1 \
+  --input-dir experiments/gtex/results/repeated_cv_v2 \
   --repeats 20
 ```
 
@@ -99,3 +99,7 @@ The aggregation audit requires 200 neural files, 200 classical files, and 200 ov
 files. Reproducing HPS independently in the neural and classical pipelines yields a
 maximum MSE discrepancy of `8.88e-16`. COVER records the selected coupling and the
 learned pairwise overlap diagnostics for every response-fold job.
+The reported heatmap uses the mean generalized eigenvalue of the overlap
+matrix relative to the pairwise average second-moment matrix. This diagnostic
+is invariant to an invertible change of coordinates in the learned
+representation.

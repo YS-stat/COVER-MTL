@@ -492,7 +492,7 @@ def plot_main_scaling() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def write_main_gtex_table() -> pd.DataFrame:
-    result_dir = ROOT / "experiments" / "gtex" / "results" / "repeated_cv_v1"
+    result_dir = ROOT / "experiments" / "gtex" / "frozen_results"
     response = pd.read_csv(result_dir / "response_mean_sd.csv")
     overall = pd.read_csv(result_dir / "overall_mean_sd.csv")
     baseline_response = pd.read_csv(result_dir / "mean_baseline_response_mean_sd.csv")
@@ -539,7 +539,7 @@ def write_main_gtex_table() -> pd.DataFrame:
     lines.extend([
         r"\bottomrule",
         r"\end{tabular}",
-        r"\caption{Prediction performance in the GTEx brain-tissue analysis. Entries are standardized mean squared errors, reported as means (standard deviations) over 20 repeated five-fold cross-validation partitions.}",
+        r"\caption{Prediction performance in the GTEx central-nervous-system analysis. Entries are standardized mean squared errors, reported as means (standard deviations) over 20 repeated five-fold cross-validation partitions.}",
         r"\label{tab:gtex-main}",
         r"\end{table}",
     ])
@@ -548,7 +548,7 @@ def write_main_gtex_table() -> pd.DataFrame:
 
 
 def plot_main_gtex_overlap() -> None:
-    source = ROOT / "experiments" / "gtex" / "results" / "repeated_cv_v1" / "pairwise_overlap_mean_sd.csv"
+    source = ROOT / "experiments" / "gtex" / "frozen_results" / "pairwise_overlap_mean_sd.csv"
     data = pd.read_csv(source)
     tissues = sorted(set(data["left_tissue"]) | set(data["right_tissue"]))
     short = {
@@ -571,8 +571,9 @@ def plot_main_gtex_overlap() -> None:
         matrix = pd.DataFrame(np.eye(len(tissues)), index=tissues, columns=tissues)
         block = data.loc[data["response"].eq(response_name)]
         for row in block.itertuples(index=False):
-            matrix.loc[row.left_tissue, row.right_tissue] = row.normalized_overlap_trace_mean
-            matrix.loc[row.right_tissue, row.left_tissue] = row.normalized_overlap_trace_mean
+            value = row.invariant_normalized_overlap_mean
+            matrix.loc[row.left_tissue, row.right_tissue] = value
+            matrix.loc[row.right_tissue, row.left_tissue] = value
         image = ax.imshow(matrix.to_numpy(), cmap="YlGnBu", vmin=0.0, vmax=1.0, aspect="equal")
         ax.set_title(response_name, loc="left", pad=8)
         labels = [short.get(tissue, tissue) for tissue in tissues]
@@ -941,7 +942,7 @@ def write_theory_verification_table() -> pd.DataFrame:
 
 
 def write_gtex_task_table() -> pd.DataFrame:
-    source = ROOT / "experiments" / "gtex" / "results" / "repeated_cv_v1" / "per_repeat_tissue_metrics.csv"
+    source = ROOT / "experiments" / "gtex" / "frozen_results" / "per_repeat_tissue_metrics.csv"
     data = pd.read_csv(source)
     summary = (
         data.groupby(["response", "tissue", "method"])["standardized_mse"]
@@ -1011,7 +1012,7 @@ def write_provenance() -> None:
             "results/sensitivity",
             "results/outlier",
             "results/theory_verification",
-            "experiments/gtex/results/repeated_cv_v1",
+            "experiments/gtex/frozen_results",
         ],
         "excluded": [
             "exploratory and calibration simulations",

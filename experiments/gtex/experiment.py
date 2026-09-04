@@ -226,6 +226,29 @@ def overlap_rows(
             overlap_energy = float(difference @ omega @ difference)
             average = 0.5 * (a + b)
             average_energy = float(difference @ average @ difference)
+            average_eigenvalues, average_eigenvectors = torch.linalg.eigh(average)
+            tolerance = (
+                torch.finfo(average.dtype).eps
+                * max(average.shape)
+                * max(float(average_eigenvalues.abs().max()), 1.0)
+            )
+            supported = average_eigenvalues > tolerance
+            if bool(supported.any()):
+                inverse_root = average_eigenvectors[:, supported] / torch.sqrt(
+                    average_eigenvalues[supported]
+                )
+                normalized_overlap = inverse_root.T @ omega @ inverse_root
+                normalized_overlap = 0.5 * (
+                    normalized_overlap + normalized_overlap.T
+                )
+                generalized_eigenvalues = torch.linalg.eigvalsh(
+                    normalized_overlap
+                ).clamp(0.0, 1.0)
+                invariant_overlap = float(generalized_eigenvalues.mean())
+                invariant_rank = int(generalized_eigenvalues.numel())
+            else:
+                invariant_overlap = 0.0
+                invariant_rank = 0
             unweighted_distance = float(difference @ difference)
             trace = float(eigenvalues.sum())
             squared_trace = float((eigenvalues * eigenvalues).sum())
@@ -236,6 +259,8 @@ def overlap_rows(
                 "normalized_overlap_trace": float(
                     trace / max(denominator, 1e-12)
                 ),
+                "invariant_normalized_overlap": invariant_overlap,
+                "invariant_overlap_rank": invariant_rank,
                 "overlap_effective_rank": float(
                     trace * trace / max(squared_trace, 1e-12)
                 ),
