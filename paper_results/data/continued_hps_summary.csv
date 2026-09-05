@@ -1,0 +1,7 @@
+setting,method,replicates,excess_mse_mean,excess_mse_sd
+homogeneous,HPS,100,0.227977,0.013570
+homogeneous,Continued-HPS,100,0.224049,0.013828
+homogeneous,COVER,100,0.102219,0.006099
+joint_strong,HPS,100,0.130061,0.009160
+joint_strong,Continued-HPS,100,0.129601,0.009175
+joint_strong,COVER,100,0.105906,0.006623

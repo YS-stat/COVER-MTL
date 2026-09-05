@@ -28,6 +28,7 @@ from ..models import (
 from .randomness import derive_seed
 from .training import (
     NeuralFit,
+    clone_model,
     fit_neural_model,
     predict_all_tasks,
     predict_decomposition,
@@ -47,6 +48,7 @@ SUPPORTED_METHODS = (
     "Pool",
     "STL",
     "HPS",
+    "Continued-HPS",
     "MMoE",
     "Average-Moment",
     "COVER",
@@ -484,7 +486,15 @@ def run_replicate(
     tuning_rows: list[dict[str, object]] = []
 
     needs_hps = bool(
-        {"HPS", "Average-Moment", "COVER", "ARMUL", "FLARCC"} & set(methods)
+        {
+            "HPS",
+            "Continued-HPS",
+            "Average-Moment",
+            "COVER",
+            "ARMUL",
+            "FLARCC",
+        }
+        & set(methods)
     )
     hps_fit: NeuralFit | None = None
     if needs_hps:
@@ -500,6 +510,26 @@ def run_replicate(
         if "HPS" in methods:
             metric_rows.append(row)
             task_rows.extend(rows)
+
+        if "Continued-HPS" in methods:
+            continuation_seed = derive_seed(
+                derive_seed(20260825, "main_model", scenario, replicate),
+                "COVER",
+                0.0,
+            )
+            _, continued_row, continued_rows = _fit_one_neural(
+                "Continued-HPS",
+                clone_model(hps_fit.model),
+                data,
+                coupling_optimization,
+                continuation_seed,
+                device,
+                coupling=0.0,
+            )
+            continued_row["warm_start"] = "HPS"
+            continued_row["additional_budget"] = coupling_optimization.steps
+            metric_rows.append(continued_row)
+            task_rows.extend(continued_rows)
 
     if "Pool" in methods:
         seed = derive_seed(20260825, "main_model", scenario, replicate, "Pool")

@@ -23,3 +23,6 @@ Simulation performance figures use task-balanced excess mean squared error.
 Curves show Monte Carlo means with 95% confidence intervals.  GTEx tables use
 20 repeated five-fold cross-validation partitions and report means with
 between-repeat standard deviations.
+
+The file `data/continued_hps_summary.csv` records the 100-repetition
+matched-budget control reported in Appendix A.4.

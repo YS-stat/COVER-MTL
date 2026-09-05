@@ -52,6 +52,22 @@ python -m cover_mtl.simulations.launchers.primary \
   --within-scales 0.20
 ```
 
+The matched-budget diagnostic continues the selected HPS checkpoint with zero
+coupling under the same 1,000-update limit and validation stopping rule used by
+COVER. It is run under homogeneity and strong joint heterogeneity:
+
+```bash
+python -m cover_mtl.simulations.launchers.primary \
+  --output-dir results/continued_hps_homogeneous \
+  --replicates 100 --scenarios homogeneous --within-scales 0.20 \
+  --methods HPS,Continued-HPS,COVER
+
+python -m cover_mtl.simulations.launchers.primary \
+  --output-dir results/continued_hps_joint_strong \
+  --replicates 100 --scenarios both_overlap_aligned --within-scales 0.30 \
+  --methods HPS,Continued-HPS,COVER
+```
+
 The random-alignment robustness setting and Average-Moment ablation are:
 
 ```bash
